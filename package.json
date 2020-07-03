@@ -1,0 +1,42 @@
+{
+  "name": "electron-react-parcel",
+  "version": "1.0.0",
+  "description": "A minimal Electron + React.js boilerplate with [parcel as bundler](https://github.com/parcel-bundler/parcel). Parcel is an alternative web application bundler to Webpack.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "parcel ./src/index.html -d build/",
+    "start-dev": "cross-env ELECTRON_START_URL=http://localhost:1234 electron .",
+    "start": "electron .",
+    "build": "parcel build ./src/index.html -d build/ --public-url ./",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "appId": "parcel.reactjs.electron",
+    "mac": {
+      "category": "your.app.category.type"
+    },
+    "files": [
+      "main.js",
+      "build/*"
+    ]
+  },
+  "keywords": [],
+  "author": "Thomas Dell",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "cross-env": "^7.0.2",
+    "electron": "^9.0.5",
+    "electron-builder": "^22.7.0",
+    "electron-reload": "^1.5.0",
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
